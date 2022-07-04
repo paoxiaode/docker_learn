@@ -1,5 +1,7 @@
 # 不同软件常用命令收集整理
 
-[docker](code/docker.md)
+[docker常用指令](code/docker.md)
 
-[conda + pip](code/conda.md)
+[conda + pip常用指令](code/conda.md)
+
+[git常用指令](code/git.md)
