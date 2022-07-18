@@ -12,6 +12,7 @@ git diff # 比较工作区和暂存区文件区别，不包含新添加untracked
 git checkout # 切换/新建分支
 git push -u origin master # 推送代码
 ssh-keygen -t rsa -f ~/.ssh/gitlab-rsa # 生成新的ssh key
+git remote set-url origin https://git-repo/new-repository.git
 
 # 推送代码
 git add .
