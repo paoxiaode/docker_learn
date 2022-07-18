@@ -5,3 +5,5 @@
 [conda + pip常用指令](code/conda.md)
 
 [git常用指令](code/git.md)
+
+[bash常用指令](code/bash.md)
