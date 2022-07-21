@@ -1,9 +1,11 @@
 # git常用命令整理
+:label:`工作区、暂存库、版本库`
+
 ![Primitive Tensor Function](../img/1352126739_7909.jpg)
-:label:`fig_workspace`
+
+:label:`Fork 工作流程`
 
 ![Primitive Tensor Function](../img/fork.jpg)
-:label:`fig_fork_workflow`
 
 
 ``` bash
