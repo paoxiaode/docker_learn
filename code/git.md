@@ -1,11 +1,10 @@
 # git常用命令整理
-<img src="../img/1352126739_7909.jpg" >
-<center>
-<img src="../img/fork.jpg">
-<br>
-<div style="color: #999; padding: 2px;color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;">
-Fork 流程示意图</div>
-</center>
+![Primitive Tensor Function](../img/1352126739_7909.jpg)
+:label:`fig_workspace`
+
+![Primitive Tensor Function](../img/fork.jpg)
+:label:`fig_fork_workflow`
+
 
 ``` bash
 # 常用指令
