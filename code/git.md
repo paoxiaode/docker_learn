@@ -45,4 +45,16 @@ git fetch origin master:temp # 从远程的origin仓库的master分支下载到�
 git diff temp # 查看temp分支与本地原有分支的不同
 git merge temp # 合并
 git branch -d temp # 删除分支
+
+# git submodule
+# ref: https://zhuanlan.zhihu.com/p/87053283
+# 将一个git repo作为另一个git repo的子目录
+#添加submodule
+git submodule add <submodule_url> <submodule_path>
+# 初始化主项目的子项目
+git submodule init
+git submodule update
+# 删除
+git submodule deinit project-sub-1
+git rm project-sub-1
 ```
