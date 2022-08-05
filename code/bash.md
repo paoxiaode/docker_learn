@@ -113,3 +113,14 @@ for i in "${arrayName[@]}"; do
   echo $i
 done
 ```
+
+## Example
+``` bash
+# get the current time
+date=$(date +%Y%m%d-%H%M%S) 
+
+# switch
+if [ "$1" == "1" ]; then
+
+fi
+```

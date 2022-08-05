@@ -35,8 +35,11 @@ git reset HEAD^
 # 撤回多次之前的commit
 git reflog # 查询HEAD
 git reset [HEAD] # 回退
+```
 
-# 拉取最新的代码
+
+## 拉取最新的代码
+```
 # pull 自动合并
 git pull
 # fetch+merge 手动合并
@@ -46,7 +49,9 @@ git diff temp # 查看temp分支与本地原有分支的不同
 git merge temp # 合并
 git branch -d temp # 删除分支
 
-# git submodule
+```
+## git submodule
+```
 # ref: https://zhuanlan.zhihu.com/p/87053283
 # 将一个git repo作为另一个git repo的子目录
 #添加submodule
@@ -57,4 +62,26 @@ git submodule update
 # 删除
 git submodule deinit project-sub-1
 git rm project-sub-1
+```
+
+## fork项目管理
+
+``` bash
+# 拉取源项目最新代码
+git remote add upstream git@xxxxxxx.git
+git pull upstream {remote branch}:{local branch}
+```
+
+## pull代码冲突
+
+``` bash
+# error
+Auto Merge Failed; Fix Conflicts and Then Commit the Result.
+# method 1: give up local branch
+git reset --hard origin/master
+# method 2: metain the local branch
+git add .
+git commmit -m "commit"
+# method 3: give up the pull, back to the last commit
+git reset --hard HEAD
 ```
