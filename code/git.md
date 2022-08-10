@@ -53,6 +53,7 @@ git branch -d temp # 删除分支
 ## git submodule
 ```
 # ref: https://zhuanlan.zhihu.com/p/87053283
+# https://www.cnblogs.com/jyroy/p/14367776.html
 # 将一个git repo作为另一个git repo的子目录
 #添加submodule
 git submodule add <submodule_url> <submodule_path>
@@ -62,6 +63,8 @@ git submodule update
 # 删除
 git submodule deinit project-sub-1
 git rm project-sub-1
+vim .git/config
+rm -rf .git/modules/子模块目录
 ```
 
 ## fork项目管理
