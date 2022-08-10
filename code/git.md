@@ -85,3 +85,21 @@ git commmit -m "commit"
 # method 3: give up the pull, back to the last commit
 git reset --hard HEAD
 ```
+
+## 合并多次commit
+``` bash
+# 查看commit历史
+git log --oneline
+# 修改commit
+git rebase -i # 显示全部commit
+git rebase -i <commit_sha> # 显示commit_sha后的所有commit
+git rebase -i HEAD~4 # HEAD之前三个版本
+# 修改完成后
+git push --force origin main
+
+# 合并多次commit可能出现conflict
+# 选择接受哪次commit
+git add .
+git rebase --continue
+git git push --force origin main
+```
