@@ -7,3 +7,5 @@
 [git常用指令](code/git.md)
 
 [bash常用指令](code/bash.md)
+
+[从源码build pytorch]
