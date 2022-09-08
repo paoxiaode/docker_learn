@@ -7,6 +7,7 @@
   - [合并多次commit](#合并多次commit)
   - [更新.gitignore](#更新gitignore)
   - [git rm](#git-rm)
+  - [生成和应用patch](#生成和应用patch)
 
 :label:`工作区、暂存库、版本库`
 
@@ -136,7 +137,7 @@ git rm <file>
 git rm --cached <file>
 ```
 
-## 生成patch
+## 生成和应用patch
 ``` bash
 # git diff > xxx.patch
 git diff test.py > test.patch
@@ -147,8 +148,22 @@ $ git format-patch HEAD^       #生成最近的1次commit的patch
 $ git format-patch HEAD^^      #生成最近的2次commit的patch
 $ git format-patch <r1>..<r2>  #生成两个commit间的修改的patch（生成的patch不包含r1. <r1>和<r2>都是具体的commit号)
 $ git format-patch -1 <r1>     #生成单个commit的patch
-$ git format-patch <r1>        #生成某commit以来的修改patch（不包含该commit）
+$ git format-patch <r1>        #生成某commit以来的修改patch
 $ git format-patch --root <r1> #生成从根到r1提交的所有patch
+```
+git am会直接将patch的所有信息打上去，而且不用重新git add和git commit，author也是patch的author而不是打patch的人。
 
+git apply：打完patch后需要重新git add和git commit。
+检查patch的情况
+``` bash
+git apply --stat 0001-limit-log-function.patch  # 查看patch的情况
+git apply --check 0001-limit-log-function.patch # 检查patch是否能够打上，如果没有任何输出，则说明无冲突，可以打上
 
+# 打patch场景之一使用git diff生成的patch
+git apply xxx.patch 
+#打patch场景之二使用git format-patch生成的patch
+git am 0001-limit-log-function.patch     # 将patch打上
+git am ~/patch-set/*.patch  #将路径~/patch-set/*.patch 按照先后顺序打上
+git am --abort  #当git am失败时，返回没有打patch的状态)
+git am --resolved #当git am失败，解决完冲突后，这条命令会接着打patch
 ```

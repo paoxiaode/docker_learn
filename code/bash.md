@@ -1,5 +1,13 @@
 # Bash cheat sheet
-
+  - [Bash cheat sheet](#bash-cheat-sheet)
+  - [Reference](#reference)
+  - [Basic](#basic)
+  - [Conditional statement](#conditional-statement)
+  - [Loop](#loop)
+  - [Function](#function)
+  - [Array](#array)
+  - [Example](#example)
+  - [文本替换](#文本替换)
 ## Reference
 https://devhints.io/bash
 
