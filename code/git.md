@@ -1,4 +1,13 @@
 # git常用命令整理
+  - [git常用命令整理](#git常用命令整理)
+  - [拉取最新的代码](#拉取最新的代码)
+  - [git submodule](#git-submodule)
+  - [fork项目管理](#fork项目管理)
+  - [pull代码冲突](#pull代码冲突)
+  - [合并多次commit](#合并多次commit)
+  - [更新.gitignore](#更新gitignore)
+  - [git rm](#git-rm)
+
 :label:`工作区、暂存库、版本库`
 
 ![Primitive Tensor Function](../img/1352126739_7909.jpg)
@@ -109,4 +118,37 @@ git push --force origin main
 git add .
 git rebase --continue
 git git push --force origin main
+```
+
+## 更新.gitignore
+``` bash
+# .gitignore只能忽略 untracked 的文件，如果已经tracked，就需要删除本地缓存
+git rm --cached <folder>
+git add .
+git commit -m "update .gitignore"
+```
+
+## git rm
+``` bash
+# 删除暂存区和工作区
+git rm <file>
+# 删除暂存区，保留本地文件
+git rm --cached <file>
+```
+
+## 生成patch
+``` bash
+# git diff > xxx.patch
+git diff test.py > test.patch
+git diff > test.patch
+
+# git format-patch
+$ git format-patch HEAD^       #生成最近的1次commit的patch
+$ git format-patch HEAD^^      #生成最近的2次commit的patch
+$ git format-patch <r1>..<r2>  #生成两个commit间的修改的patch（生成的patch不包含r1. <r1>和<r2>都是具体的commit号)
+$ git format-patch -1 <r1>     #生成单个commit的patch
+$ git format-patch <r1>        #生成某commit以来的修改patch（不包含该commit）
+$ git format-patch --root <r1> #生成从根到r1提交的所有patch
+
+
 ```
