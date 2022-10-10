@@ -29,6 +29,8 @@ git submodule update --init --recursive
 pip3 install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio==0.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
 
 export DGL_HOME=/home/scratch.jiahuil_gpu/GNN/dgl_0.7_baseline
+export DGL_HOME=/home/paoxiaode/Code/dgl
+
 export DGL_LIBRARY_PATH=$DGL_HOME/build
 export PYTHONPATH=$PYTHONPATH:$DGL_HOME/python
 

@@ -104,6 +104,7 @@ git reset --hard HEAD
 ```
 
 ## 合并多次commit
+
 ``` bash
 # 查看commit历史
 git log --oneline
@@ -118,7 +119,7 @@ git push --force origin main
 # 选择接受哪次commit
 git add .
 git rebase --continue
-git git push --force origin main
+git push --force origin main
 ```
 
 ## 更新.gitignore
