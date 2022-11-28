@@ -112,9 +112,8 @@ git log --oneline
 git rebase -i # 显示全部commit
 git rebase -i <commit_sha> # 显示commit_sha后的所有commit
 git rebase -i HEAD~4 # HEAD之前三个版本
-# 修改完成后
+# 修改完成后，要在push到远程之前进行rebase，push到远程之后就不要rebase了
 git push --force origin main
-
 # 合并多次commit可能出现conflict
 # 选择接受哪次commit
 git add .
