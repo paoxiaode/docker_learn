@@ -28,6 +28,14 @@ docker ps -a   #查看所有容器
 docker inspect #详细信息
 docker diff    #查看文件改动
 docker logs    #查看执行过的命令
+
+docker images # list all the images
+docker rmi image # delete images
+
+docker login -u user -p password
+docker logout
+
+docker system df # show docker container space
 ```
 
 ## 创建镜像（image）
