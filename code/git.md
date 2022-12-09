@@ -62,7 +62,7 @@ git fetch origin master:temp # 从远程的origin仓库的master分支下载到�
 git diff temp # 查看temp分支与本地原有分支的不同
 git merge temp # 合并
 git branch -d temp # 删除分支
-
+git push origin --delete temp # 删除远程分支
 ```
 ## git submodule
 ```
