@@ -12,5 +12,7 @@
 
 [从源码build](code/build_from_source.md)
 
+[使用tensorbroad](code/tensorbroad.ipynb)
+
 
 
