@@ -14,5 +14,8 @@
 
 [使用tensorbroad](code/tensorbroad.ipynb)
 
+[Python pdb调试](code/pdb.md)
+
+
 
 
