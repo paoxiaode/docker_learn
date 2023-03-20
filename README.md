@@ -16,6 +16,8 @@
 
 [Python pdb调试](code/pdb.md)
 
+[Python command line](code/python_command_line.md)
+
 
 
 
