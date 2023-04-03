@@ -1,24 +1,25 @@
 # git常用命令整理
-  - [git常用命令整理](#git常用命令整理)
-  - [拉取最新的代码](#拉取最新的代码)
-  - [git submodule](#git-submodule)
-  - [fork项目管理](#fork项目管理)
-  - [pull代码冲突](#pull代码冲突)
-  - [合并多次commit](#合并多次commit)
-  - [更新.gitignore](#更新gitignore)
-  - [git rm](#git-rm)
-  - [生成和应用patch](#生成和应用patch)
 
-:label:`工作区、暂存库、版本库`
+- [git常用命令整理](#git常用命令整理)
+- [拉取最新的代码](#拉取最新的代码)
+- [git submodule](#git-submodule)
+- [fork项目管理](#fork项目管理)
+- [pull代码冲突](#pull代码冲突)
+- [合并多次commit](#合并多次commit)
+- [更新.gitignore](#更新gitignore)
+- [git rm](#git-rm)
+- [生成和应用patch](#生成和应用patch)
+
+🏷`工作区、暂存库、版本库`
 
 ![Primitive Tensor Function](../img/1352126739_7909.jpg)
 
-:label:`Fork 工作流程`
+🏷`Fork 工作流程`
 
 ![Primitive Tensor Function](../img/fork.jpg)
 
+```bash
 
-``` bash
 # 常用指令
 git clone # 拉取代码
 git branch # -a 查询所有分支 -d 删除分支
@@ -40,8 +41,14 @@ git commit -m "commit"
 git push orgin master
 
 # 拉取远程分支
+git fetch
 git branch -a 
 git checkout -b 本地分支名 origin/远程分支名
+
+# 拉取远程tag（查看代码）
+git fetch
+git tag
+git checkout -b [new-branch-name] [tag-name]
 
 # 撤回上一次commit
 git reset HEAD^
@@ -51,8 +58,8 @@ git reflog # 查询HEAD
 git reset [HEAD] # 回退
 ```
 
-
 ## 拉取最新的代码
+
 ```
 # pull 自动合并
 git pull
@@ -64,7 +71,9 @@ git merge temp # 合并
 git branch -d temp # 删除分支
 git push origin --delete temp # 删除远程分支
 ```
+
 ## git submodule
+
 ```
 # ref: https://zhuanlan.zhihu.com/p/87053283
 # https://www.cnblogs.com/jyroy/p/14367776.html
@@ -83,7 +92,7 @@ rm -rf .git/modules/子模块目录
 
 ## fork项目管理
 
-``` bash
+```bash
 # 拉取源项目最新代码
 git remote add upstream git@xxxxxxx.git
 git pull upstream {remote branch}:{local branch}
@@ -91,7 +100,7 @@ git pull upstream {remote branch}:{local branch}
 
 ## pull代码冲突
 
-``` bash
+```bash
 # error
 Auto Merge Failed; Fix Conflicts and Then Commit the Result.
 # method 1: give up local branch
@@ -105,7 +114,7 @@ git reset --hard HEAD
 
 ## 合并多次commit
 
-``` bash
+```bash
 # 查看commit历史
 git log --oneline
 # 修改commit
@@ -122,7 +131,8 @@ git push --force origin main
 ```
 
 ## 更新.gitignore
-``` bash
+
+```bash
 # .gitignore只能忽略 untracked 的文件，如果已经tracked，就需要删除本地缓存
 git rm --cached <folder>
 git add .
@@ -130,7 +140,8 @@ git commit -m "update .gitignore"
 ```
 
 ## git rm
-``` bash
+
+```bash
 # 删除暂存区和工作区
 git rm <file>
 # 删除暂存区，保留本地文件
@@ -138,7 +149,8 @@ git rm --cached <file>
 ```
 
 ## 生成和应用patch
-``` bash
+
+```bash
 # git diff > xxx.patch
 git diff test.py > test.patch
 git diff > test.patch
@@ -151,11 +163,13 @@ $ git format-patch -1 <r1>     #生成单个commit的patch
 $ git format-patch <r1>        #生成某commit以来的修改patch
 $ git format-patch --root <r1> #生成从根到r1提交的所有patch
 ```
+
 git am会直接将patch的所有信息打上去，而且不用重新git add和git commit，author也是patch的author而不是打patch的人。
 
 git apply：打完patch后需要重新git add和git commit。
 检查patch的情况
-``` bash
+
+```bash
 git apply --stat 0001-limit-log-function.patch  # 查看patch的情况
 git apply --check 0001-limit-log-function.patch # 检查patch是否能够打上，如果没有任何输出，则说明无冲突，可以打上
 
