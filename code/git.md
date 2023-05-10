@@ -93,9 +93,14 @@ rm -rf .git/modules/子模块目录
 ## fork项目管理
 
 ```bash
-# 拉取源项目最新代码
+# 添加源项目
 git remote add upstream git@xxxxxxx.git
-git pull upstream {remote branch}:{local branch}
+git fetch -t upstream
+git fetch -t upstream
+
+# 切换源项目的branch/tag
+git checkout {tag}
+git checkout -b {branch_name} upstream/{branch}
 ```
 
 ## pull代码冲突
