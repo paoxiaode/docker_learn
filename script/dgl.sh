@@ -1,0 +1,2 @@
+docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -it -v /home/ubuntu/code:/workspace2 nvcr.io/nvidia/pytorch:22.08-py3 bash -c 'echo "export DGL_HOME='/workspace2/dgl_docker'">>/root/.bashrc && echo "export DGL_LIBRARY_PATH='/workspace2/dgl_docker/build'" >> /root/.bashrc && echo "export PYTHONPATH='/workspace2/dgl_docker/python:/workspace2/dgl_sparse_benchmark:/workspace2/python_profiler/'" >> /root/.bashrc && bash'
+
