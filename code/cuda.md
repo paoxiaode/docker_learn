@@ -40,6 +40,22 @@ void checkLast(const char* const file, const int line)
         std::cerr << "CUDA Runtime Error at: " << file << ":" << line
                   << std::endl;
         std::cerr << cudaGetErrorString(err) << std::endl;
+        // We don't exit when we encounter CUDA errors in this example.
+        // std::exit(EXIT_FAILURE);
     }
+}
+
+__global__ void kernel1(int a)
+{
+    float IDsum = a + 1;
+    // printf("Thread %d %d final value = %f\n", threadIdx.x, threadIdx.y, IDsum);
+}
+
+int main()
+{
+    // cudaFuncSetAttribute(kernel, cudaFuncAttributeMaxDynamicSharedMemorySize, 65536);
+    kernel1<<<dim3(512, 1,1), dim3(32, 1,1)>>>(1);
+    CHECK_LAST_CUDA_ERROR();
+    return 0;
 }
 ```
