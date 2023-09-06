@@ -1,10 +1,10 @@
-# CUDA
+# CUD
 
-doc:
+CUDA and C++
 
 [CUDA C++ Programming Guide (nvidia.com)](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html?highlight=__shfl_xor_sync#warp-shuffle-functions)
 
-[NVIDIA CUDA Compiler Driver NVCC](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#)
+
 
 [cuSPARSE (nvidia.com)](https://docs.nvidia.com/cuda/cusparse/index.html#)
 
@@ -12,13 +12,23 @@ doc:
 
 [CUDA C++ Best Practices Guide](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide)
 
-sample:
+Compile:
+
+[NVIDIA CUDA Compiler Driver NVCC](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#)
+
+CUDA and PTX Assembly
+
+[Parallel Thread Execution ISA](https://docs.nvidia.com/cuda/parallel-thread-execution/contents.html)
+
+[Inline PTX Assembly in CUDA](https://docs.nvidia.com/cuda/inline-ptx-assembly/index.html)
+
+Sample:
 
 https://github.com/NVIDIA/cuda-samples
 
 https://github.com/NVIDIA/CUDALibrarySamples
 
-tutorial
+Tutorial
 
 [Course on CUDA Programming (ox.ac.uk)](https://people.maths.ox.ac.uk/gilesm/cuda/index_Oden22.html)
 
