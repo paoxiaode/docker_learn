@@ -1,9 +1,10 @@
 # docker常用命令收集整理
-  - [docker常用命令收集整理](#docker常用命令收集整理)
+- [docker常用命令收集整理](#docker常用命令收集整理)
   - [启动/停止容器](#启动停止容器)
   - [针对docker的操作](#针对docker的操作)
   - [创建镜像（image）](#创建镜像image)
   - [使用寄存服务](#使用寄存服务)
+  - [清理占用空间](#清理占用空间)
 ## 启动/停止容器
 
 ```bash
@@ -47,5 +48,29 @@ docker build -t test/cowsay-dockerfile . #需要在dockerfile目录下，-t指�
 docker login # login docker hub
 docker build -t jiahuil/cowsay-dockerfile . #需要在dockerfile目录下，-t指定名称
 docker push jiahuil/cowsay-dockerfile 
+
+```
+## 清理占用空间
+```bash
+# 查看container+image占用空间
+docker system df
+
+# #清理镜像空间
+
+# 列出镜像
+docker images 
+
+# 列出镜像
+docker images 
+
+# 子镜像，就是被其他镜像引用的中间镜像，不能被删除。
+# 悬挂状态的镜像，就是不会再被使用的镜像，可以被删除，显示为<none>:<none> 的镜像。
+docker image ls -f dangling=true # 列出所有悬挂状态的镜像
+
+# 删除 dangling 镜像
+docker image prune
+
+# 删除退出状态的container
+docker ps -a | grep "Exited" | awk '{print $1}'| xargs docker rm
 
 ```
