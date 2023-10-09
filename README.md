@@ -21,3 +21,5 @@
 [nsight system](code/nsys.md)
 
 [CUDA 编程](code/cuda.md)
+
+[torch C++ extension](code/torch_cpp_extension.md)
