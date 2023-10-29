@@ -1,0 +1,2 @@
+docker run --rm --gpus all --cap-add sys_ptrace --name fuse --entrypoint /bin/bash --ipc=host --ulimit memlock=-1 --cap-add=SYS_ADMIN --ulimit stack=67108864 -itd -v /home/ubuntu/code:/workspace2 fuse_attention:latest
+docker exec -it fuse bash
