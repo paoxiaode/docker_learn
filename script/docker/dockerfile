@@ -1,11 +1,13 @@
 FROM nvcr.io/nvidia/pytorch:23.03-py3
 
 RUN apt-get -y update \
-        && apt-get install -y gdb 
+        && apt-get install -y gdb\
+	&& apt-get install -y clang-tidy 
 
 
 RUN pip install ogb \
-        && pip install rdkit 
+        && pip install rdkit \
+	&& pip install GPUtil 
 
 ENV DGL_HOME=/workspace2/dgl
 ENV DGL_LIBRARY_PATH=/workspace2/dgl/build
