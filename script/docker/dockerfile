@@ -12,3 +12,4 @@ RUN pip install ogb \
 ENV DGL_HOME=/workspace2/dgl
 ENV DGL_LIBRARY_PATH=/workspace2/dgl/build
 ENV PYTHONPATH="/workspace2/fuse_attention/package:/workspace2/fuse_attention:/workspace2/python_profiler:/workspace2/dgl/python:$PYTHONPATH"
+WORKDIR /workspace2/fuse_attention
